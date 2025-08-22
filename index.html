@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shakeela Food – Marketplace WhatsApp</title>
+  <meta name="description" content="Belanja Sayuran & Fried Chicken dari Shakeela Food. Pesan cepat via WhatsApp." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root { --brand:#16a34a; }
+    html { scroll-behavior:smooth; }
+    body { font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
+    .card { box-shadow: 0 10px 25px rgba(0,0,0,.06); }
+    .glass { backdrop-filter: blur(10px); background: rgba(255,255,255,.7); }
+    .hide-scroll::-webkit-scrollbar { display: none; }
+  </style>
+</head>
+<body class="bg-gradient-to-b from-green-50 via-white to-white text-slate-800">
+  <!-- Top bar -->
+  <header class="sticky top-0 z-40 bg-white/80 backdrop-blur border-b border-slate-200/60">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center gap-3">
+      <div class="w-9 h-9 rounded-2xl bg-gradient-to-br from-emerald-400 to-lime-500 grid place-items-center text-white font-black">SF</div>
+      <div class="flex-1">
+        <h1 class="text-base sm:text-lg font-bold leading-tight">Shakeela Food</h1>
+        <p class="text-xs sm:text-sm text-slate-600">Belanja cepat • Bayar di tempat • Chat WhatsApp langsung</p>
+      </div>
+      <a id="waHeader" href="#" class="hidden sm:inline-flex items-center gap-2 px-3 py-2 rounded-xl bg-emerald-500 text-white font-semibold hover:bg-emerald-600 transition">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M20.52 3.48A11.94 11.94 0 0012.06 0C5.55 0 .26 5.29.26 11.8c0 2.08.56 4.06 1.63 5.82L0 24l6.54-1.85a11.8 11.8 0 005.52 1.4h.01c6.51 0 11.8-5.29 11.8-11.8 0-3.15-1.23-6.11-3.35-8.27zM12.07 21.2h-.01a9.4 9.4 0 01-4.79-1.31l-.34-.2-3.88 1.1 1.1-3.78-.22-.35a9.39 9.39 0 01-1.47-5.04c0-5.19 4.23-9.41 9.42-9.41 2.51 0 4.87.98 6.64 2.76a9.37 9.37 0 012.76 6.64c0 5.19-4.22 9.4-9.4 9.4zm5.43-7.05c-.3-.15-1.77-.87-2.05-.97-.28-.1-.48-.15-.68.15-.2.3-.78.96-.95 1.15-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.47-.89-.79-1.5-1.76-1.68-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.68-1.64-.93-2.24-.24-.58-.49-.5-.68-.51l-.58-.01c-.2 0-.52.07-.8.37-.28.3-1.05 1.03-1.05 2.5s1.08 2.9 1.23 3.1c.15.2 2.12 3.24 5.14 4.55.72.31 1.28.49 1.72.63.72.23 1.38.2 1.9.12.58-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.18-1.42-.07-.12-.27-.2-.57-.35z"/></svg>
+        <span>Chat CS</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero / Banner -->
+  <section class="max-w-6xl mx-auto px-4 pt-8 pb-4">
+    <div class="grid md:grid-cols-5 gap-4 items-center">
+      <div class="md:col-span-3 p-6 rounded-3xl card bg-white">
+        <h2 class="text-2xl sm:text-3xl font-extrabold">Marketplace Direct WhatsApp</h2>
+        <p class="mt-2 text-slate-600">Pilih produk, tambah ke keranjang, lalu <span class="font-semibold">Checkout via WhatsApp</span>. Tidak perlu daftar akun.</p>
+        <div class="mt-4 flex flex-wrap gap-3">
+          <a href="#produk" class="px-4 py-2 rounded-xl bg-emerald-500 text-white font-semibold hover:bg-emerald-600">Mulai Belanja</a>
+          <a id="waHero" href="#" class="px-4 py-2 rounded-xl border-2 border-emerald-500 text-emerald-700 font-semibold hover:bg-emerald-50">Tanya CS</a>
+        </div>
+      </div>
+      <div class="md:col-span-2 p-6 rounded-3xl card bg-gradient-to-br from-emerald-100 to-lime-100">
+        <div class="text-sm text-slate-700">Info Toko</div>
+        <div class="mt-2 text-xl font-bold">Shakeela Food</div>
+        <div class="mt-1 text-slate-600">WhatsApp: <a class="underline" id="waInfo" href="#">+62 821-1304-1949</a></div>
+        <div class="mt-4 grid grid-cols-3 gap-3 text-center">
+          <div class="p-3 rounded-2xl bg-white">
+            <div class="text-2xl font-extrabold">COD</div>
+            <div class="text-xs text-slate-500">Bayar di tempat*</div>
+          </div>
+          <div class="p-3 rounded-2xl bg-white">
+            <div class="text-2xl font-extrabold">Fresh</div>
+            <div class="text-xs text-slate-500">Sayuran segar</div>
+          </div>
+          <div class="p-3 rounded-2xl bg-white">
+            <div class="text-2xl font-extrabold">Halal</div>
+            <div class="text-xs text-slate-500">Fried Chicken</div>
+          </div>
+        </div>
+        <p class="mt-3 text-xs text-slate-500">*S&K berlaku.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Controls -->
+  <section class="max-w-6xl mx-auto px-4" id="produk">
+    <div class="flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-between">
+      <div class="flex gap-2 bg-white p-2 rounded-2xl card w-full sm:w-auto">
+        <button data-filter="all" class="filter-btn px-3 py-2 rounded-xl font-semibold bg-emerald-500 text-white">Semua</button>
+        <button data-filter="Sayuran" class="filter-btn px-3 py-2 rounded-xl font-semibold text-slate-700 hover:bg-slate-100">Sayuran</button>
+        <button data-filter="Fried Chicken" class="filter-btn px-3 py-2 rounded-xl font-semibold text-slate-700 hover:bg-slate-100">Fried Chicken</button>
+      </div>
+      <div class="relative">
+        <input id="search" type="text" placeholder="Cari produk…" class="w-full sm:w-80 px-4 py-3 pr-10 rounded-2xl border border-slate-300 focus:outline-none focus:ring-4 focus:ring-emerald-200" />
+        <svg class="w-5 h-5 absolute right-3 top-1/2 -translate-y-1/2 text-slate-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M10 2a8 8 0 105.293 14.293l4.707 4.707 1.414-1.414-4.707-4.707A8 8 0 0010 2zm0 2a6 6 0 110 12A6 6 0 0110 4z"/></svg>
+      </div>
+    </div>
+
+    <!-- Grid -->
+    <div id="grid" class="mt-5 grid sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+  </section>
+
+  <!-- Cart floating button -->
+  <button id="cartFab" class="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 px-4 py-3 rounded-2xl shadow-xl bg-emerald-500 text-white font-bold flex items-center gap-2 hover:bg-emerald-600">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M7 4h-2l-1 2H1v2h2l3.6 7.59-1.35 2.45A2 2 0 007 20h12v-2H7.42a.25.25 0 01-.22-.13l.03-.06L8.1 15h7.45a2 2 0 001.8-1.11l3.58-7.16A1 1 0 0020 5H6.21l-.94-2zM7 22a2 2 0 100-4 2 2 0 000 4zm10 0a2 2 0 100-4 2 2 0 000 4z"/></svg>
+    <span>Keranjang</span>
+    <span id="cartCount" class="ml-1 inline-flex items-center justify-center text-xs font-black w-6 h-6 rounded-full bg-white text-emerald-600">0</span>
+  </button>
+
+  <!-- Cart Drawer -->
+  <div id="drawer" class="fixed inset-0 z-50 hidden">
+    <div class="absolute inset-0 bg-black/40" id="drawerBackdrop"></div>
+    <aside class="absolute right-0 top-0 h-full w-full sm:w-[420px] bg-white p-5 sm:p-6 rounded-l-2xl card overflow-y-auto hide-scroll">
+      <div class="flex items-center justify-between">
+        <h3 class="text-xl font-extrabold">Keranjang</h3>
+        <button id="drawerClose" class="p-2 rounded-xl hover:bg-slate-100" aria-label="Tutup">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor"><path d="M18.3 5.71L12 12l6.3 6.29-1.41 1.42L10.59 13.4 4.29 19.7 2.88 18.3 9.17 12 2.88 5.71 4.29 4.29l6.3 6.3 6.29-6.3z"/></svg>
+        </button>
+      </div>
+      <div id="cartItems" class="mt-4 space-y-3"></div>
+      <div id="emptyState" class="mt-6 text-center text-slate-500">Keranjang kosong. Tambahkan produk terlebih dulu.</div>
+      <div class="mt-6 border-t pt-4 flex items-center justify-between font-bold">
+        <span>Total</span>
+        <span id="cartTotal">Rp0</span>
+      </div>
+      <button id="checkoutBtn" class="mt-4 w-full px-4 py-3 rounded-xl bg-emerald-500 text-white font-bold hover:bg-emerald-600 disabled:opacity-50 disabled:cursor-not-allowed" disabled>Checkout via WhatsApp</button>
+      <p class="mt-3 text-xs text-slate-500">Dengan menekan checkout, kamu akan dialihkan ke WhatsApp untuk konfirmasi pesanan.</p>
+    </aside>
+  </div>
+
+  <footer class="mt-16 border-t bg-white/50">
+    <div class="max-w-6xl mx-auto px-4 py-10 text-sm text-slate-600 grid sm:grid-cols-2 gap-4">
+      <div>
+        <div class="font-extrabold text-slate-800">Shakeela Food</div>
+        <p>Marketplace direct WhatsApp. Belanja sayuran & fried chicken.</p>
+      </div>
+      <div class="sm:text-right">&copy; <span id="year"></span> Shakeela Food. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script>
+    // ====== Config & Data ======
+    const WA_NUMBER = '6282113041949'; // tanpa +
+
+    const products = [
+      // Sayuran
+      { id: 'bayam', name: 'Bayam', price: 5000, category: 'Sayuran', unit: 'ikat' },
+      { id: 'kangkung', name: 'Kangkung', price: 4000, category: 'Sayuran', unit: 'ikat' },
+      { id: 'cabai-merah', name: 'Cabai Merah', price: 10000, category: 'Sayuran', unit: '100 g' },
+      { id: 'ikan-nila', name: 'Ikan Nila 1 kg', price: 30000, category: 'Sayuran', unit: 'kg' },
+      // Fried Chicken
+      { id: 'ayam-crispy-dada', name: 'Ayam Crispy Dada', price: 12000, category: 'Fried Chicken', unit: 'potong' },
+      { id: 'paket-nasi-ayam', name: 'Paket Nasi + Ayam', price: 17000, category: 'Fried Chicken', unit: 'paket' },
+    ];
+
+    // ====== Helpers ======
+    const rupiah = (n) => new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 }).format(n);
+    const byId = (id) => document.getElementById(id);
+
+    // ====== Render Grid ======
+    const grid = byId('grid');
+
+    function renderGrid(filter = 'all', query = '') {
+      const q = query.trim().toLowerCase();
+      const list = products.filter(p => (filter === 'all' || p.category === filter) && p.name.toLowerCase().includes(q));
+      grid.innerHTML = list.map(p => `
+        <div class="p-4 rounded-3xl card bg-white flex flex-col">
+          <div class="aspect-[4/3] rounded-2xl bg-gradient-to-br from-emerald-100 to-lime-100 mb-3 grid place-items-center text-slate-400">
+            <span class="text-sm">${p.category}</span>
+          </div>
+          <div class="flex-1">
+            <h3 class="text-lg font-bold">${p.name}</h3>
+            <div class="text-emerald-700 font-extrabold mt-1">${rupiah(p.price)}</div>
+            <div class="text-xs text-slate-500">Satuan: ${p.unit}</div>
+          </div>
+          <div class="mt-3 flex items-center gap-2">
+            <input type="number" min="1" value="1" data-qty="${p.id}" class="w-20 px-3 py-2 rounded-xl border border-slate-300" />
+            <button data-add="${p.id}" class="flex-1 px-3 py-2 rounded-xl bg-emerald-500 text-white font-semibold hover:bg-emerald-600">Tambah</button>
+            <a href="https://wa.me/${WA_NUMBER}?text=${encodeURIComponent('Halo Shakeela Food, saya ingin pesan: ' + p.name + ' (1 ' + p.unit + '). Harga ' + rupiah(p.price))}" target="_blank" class="px-3 py-2 rounded-xl border-2 border-emerald-500 text-emerald-700 font-semibold hover:bg-emerald-50">WhatsApp</a>
+          </div>
+        </div>
+      `).join('');
+
+      // Bind add buttons
+      document.querySelectorAll('[data-add]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const id = btn.getAttribute('data-add');
+          const qtyEl = document.querySelector(`[data-qty="${id}"]`);
+          const qty = Math.max(1, parseInt(qtyEl.value || '1', 10));
+          addToCart(id, qty);
+        });
+      });
+    }
+
+    // ====== Filters & Search ======
+    let activeFilter = 'all';
+    renderGrid();
+
+    document.querySelectorAll('.filter-btn').forEach(b => {
+      b.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(x => x.classList.remove('bg-emerald-500','text-white'));
+        b.classList.add('bg-emerald-500','text-white');
+        activeFilter = b.getAttribute('data-filter');
+        renderGrid(activeFilter, byId('search').value);
+      });
+    });
+
+    byId('search').addEventListener('input', (e) => {
+      renderGrid(activeFilter, e.target.value);
+    });
+
+    // ====== Cart State ======
+    const cart = new Map(); // id -> {product, qty}
+
+    function addToCart(id, qty = 1) {
+      const p = products.find(x => x.id === id);
+      if (!p) return;
+      const prev = cart.get(id)?.qty || 0;
+      cart.set(id, { product: p, qty: prev + qty });
+      updateCartUI();
+      toast(`${p.name} ditambahkan (${qty} ${p.unit})`);
+    }
+
+    function removeFromCart(id) {
+      cart.delete(id);
+      updateCartUI();
+    }
+
+    function updateQty(id, qty) {
+      const item = cart.get(id);
+      if (!item) return;
+      const v = Math.max(1, parseInt(qty || '1', 10));
+      item.qty = v;
+      cart.set(id, item);
+      updateCartUI();
+    }
+
+    function cartToArray() { return Array.from(cart.values()); }
+
+    function subtotal() { return cartToArray().reduce((s, it) => s + it.product.price * it.qty, 0); }
+
+    function updateCartUI() {
+      const itemsEl = byId('cartItems');
+      const emptyEl = byId('emptyState');
+      const totalEl = byId('cartTotal');
+      const countEl = byId('cartCount');
+      const checkoutBtn = byId('checkoutBtn');
+
+      const items = cartToArray();
+      countEl.textContent = items.reduce((s, it) => s + it.qty, 0);
+
+      if (items.length === 0) {
+        itemsEl.innerHTML = '';
+        emptyEl.classList.remove('hidden');
+        checkoutBtn.disabled = true;
+      } else {
+        emptyEl.classList.add('hidden');
+        checkoutBtn.disabled = false;
+        itemsEl.innerHTML = items.map(({product, qty}) => `
+          <div class="p-3 rounded-2xl bg-slate-50 border border-slate-200 flex items-center gap-3">
+            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-100 to-lime-100 grid place-items-center text-[10px] text-slate-500">${product.category}</div>
+            <div class="flex-1">
+              <div class="font-semibold">${product.name}</div>
+              <div class="text-xs text-slate-500">${qty} × ${rupiah(product.price)} = <span class="font-semibold text-slate-700">${rupiah(product.price * qty)}</span></div>
+            </div>
+            <div class="flex items-center gap-2">
+              <input type="number" min="1" value="${qty}" data-cart-qty="${product.id}" class="w-16 px-2 py-2 rounded-xl border border-slate-300" />
+              <button data-remove="${product.id}" class="p-2 rounded-xl hover:bg-slate-200" aria-label="Hapus">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M6 7h12v2H6V7zm2 3h8l-1 11H9L8 10zm3-7h2l1 2h4v2H4V5h4l1-2z"/></svg>
+              </button>
+            </div>
+          </div>
+        `).join('');
+
+        // bind qty + remove
+        document.querySelectorAll('[data-cart-qty]').forEach(inp => {
+          inp.addEventListener('input', () => updateQty(inp.getAttribute('data-cart-qty'), inp.value));
+        });
+        document.querySelectorAll('[data-remove]').forEach(btn => {
+          btn.addEventListener('click', () => removeFromCart(btn.getAttribute('data-remove')));
+        });
+      }
+
+      totalEl.textContent = rupiah(subtotal());
+    }
+
+    // ====== Drawer ======
+    const drawer = byId('drawer');
+    byId('cartFab').addEventListener('click', () => { drawer.classList.remove('hidden'); });
+    byId('drawerClose').addEventListener('click', () => { drawer.classList.add('hidden'); });
+    byId('drawerBackdrop').addEventListener('click', () => { drawer.classList.add('hidden'); });
+
+    // ====== Checkout (WhatsApp) ======
+    byId('checkoutBtn').addEventListener('click', () => {
+      const items = cartToArray();
+      if (items.length === 0) return;
+      const lines = [
+        '*Pesanan Baru – Shakeela Food*',
+        '',
+        ...items.map(({product, qty}) => `• ${product.name} x ${qty} = ${rupiah(product.price * qty)}`),
+        '',
+        `Subtotal: ${rupiah(subtotal())}`,
+        '',
+        'Nama penerima:',
+        'Alamat lengkap:',
+        'Catatan (opsional):'
+      ];
+      const text = encodeURIComponent(lines.join('\n'));
+      const url = `https://wa.me/${WA_NUMBER}?text=${text}`;
+      window.open(url, '_blank');
+    });
+
+    // ====== Header WA Links ======
+    const waLink = `https://wa.me/${WA_NUMBER}`;
+    byId('waHeader').href = waLink; 
+    byId('waHero').href = waLink;
+    byId('waInfo').href = waLink;
+
+    // ====== Toast ======
+    const toastBox = document.createElement('div');
+    toastBox.className = 'fixed bottom-24 right-4 sm:right-6 space-y-2 z-[60]';
+    document.body.appendChild(toastBox);
+    function toast(msg) {
+      const el = document.createElement('div');
+      el.className = 'px-4 py-3 rounded-xl bg-slate-900 text-white shadow-lg';
+      el.textContent = msg;
+      toastBox.appendChild(el);
+      setTimeout(() => el.remove(), 2200);
+    }
+
+    // ====== Footer Year ======
+    byId('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
